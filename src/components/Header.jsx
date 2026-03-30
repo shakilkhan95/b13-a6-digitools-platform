@@ -1,10 +1,13 @@
-import { ShoppingCart } from 'lucide-react';
-import React from 'react'
+import { Menu, ShoppingCart } from 'lucide-react';
+import React, { useState } from 'react';
 
 const Header = () => {
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm">
-      <nav className="flex justify-between items-center py-6 w-11/12 lg:w-10/12 mx-auto">
+    <header className="bg-white sticky top-0 z-50">
+      <nav className="flex justify-between items-center py-6 px-6 lg:px-20 mx-auto  shadow-sm">
         {/* Logo */}
         <a
           href="#"
@@ -14,7 +17,7 @@ const Header = () => {
         </a>
 
         {/* NavLinks  */}
-        <ul className="flex items-center gap-8 text-sm font-medium text-gray-600">
+        <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
           <li>
             <a href="#products">Products</a>
           </li>
@@ -33,7 +36,7 @@ const Header = () => {
         </ul>
 
         {/* Navbar CTA  */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-5 md:gap-2">
           <div className="relative">
             <ShoppingCart />
             <span className="absolute -top-3 -right-2 text-sm h-5 w-5 rounded-full text-center text-white bg-linear-to-l from-[#9514FA] to-[#4F39F6] select-none">
@@ -41,7 +44,10 @@ const Header = () => {
             </span>
           </div>
 
-          <div className='gap-2'>
+          {/* mobile hamburger menu  */}
+          <Menu onClick={() => setMenuOpen(!menuOpen)} className="md:hidden" />
+
+          <div className="gap-2 hidden md:flex">
             <button className="text-sm font-semibold px-5 py-2 rounded-full bg-linear-to-l from-[#9514FA] to-[#4F39F6] bg-clip-text hover:text-transparent transition-colors duration-200 cursor-pointer">
               Login
             </button>
@@ -52,6 +58,51 @@ const Header = () => {
           </div>
         </div>
       </nav>
+
+      {/* mobile Navbar  */}
+      {menuOpen && (
+        <ul className="flex md:hidden flex-col py-4 px-6 gap-8 text-sm font-medium text-gray-700">
+          <li>
+            <a href="#products" onClick={() => setMenuOpen(false)}>
+              Products
+            </a>
+          </li>
+          <li>
+            <a href="#features" onClick={() => setMenuOpen(false)}>
+              Features
+            </a>
+          </li>
+          <li>
+            <a href="#pricing" onClick={() => setMenuOpen(false)}>
+              Pricing
+            </a>
+          </li>
+          <li>
+            <a href="#testimonials" onClick={() => setMenuOpen(false)}>
+              Testimonials
+            </a>
+          </li>
+          <li>
+            <a href="#faq" onClick={() => setMenuOpen(false)}>
+              FAQ
+            </a>
+          </li>
+
+          <button
+            className="w-full text-sm font-semibold px-5 py-2 border rounded-full bg-linear-to-l from-[#9514FA] to-[#4F39F6] bg-clip-text hover:text-transparent transition-colors duration-200 cursor-pointer"
+            onClick={() => setMenuOpen(false)}
+          >
+            Login
+          </button>
+
+          <button
+            className="w-full text-sm font-semibold text-white px-5 py-2 rounded-full bg-linear-to-l from-[#9514FA] to-[#4F39F6] hover:opacity-90 transition-colors duration-200 cursor-pointer"
+            onClick={() => setMenuOpen(false)}
+          >
+            Get Started
+          </button>
+        </ul>
+      )}
     </header>
   );
 }
