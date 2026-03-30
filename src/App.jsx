@@ -1,5 +1,6 @@
 import './App.css'
 import Banner from './components/Banner'
+import Features from './components/Features'
 import Header from './components/Header'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <Header></Header>
       <Banner/>
+      <Features/>
     </>
   )
 }
