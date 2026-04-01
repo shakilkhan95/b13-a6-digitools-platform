@@ -17,6 +17,7 @@ const ProductCard = ({product, onAddToCart, isInCart}) => {
   const handleBuy = () => {
     onAddToCart(product);
     setBtnText('Added to Cart');
+    setTimeout(()=>setBtnText('Buy Now'), 2000);
   }
 
   return (
