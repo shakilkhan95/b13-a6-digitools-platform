@@ -90,7 +90,7 @@ const Cart = ({cartItems, onRemove, onCheckout}) => {
         {/* Checkout button  */}
         <button
           onClick={handleCheckout}
-          className="mt-5 w-full py-3 rounded-xl text-sm font-bold text-white bg-linear-to-l from-[#9514FA] to-[#4F39F6] transition-all hover:opacity-90 "
+          className="mt-5 w-full py-3 rounded-xl text-sm font-bold text-white bg-linear-to-l from-[#9514FA] to-[#4F39F6] cursor-pointer transition-all hover:opacity-90 "
         >
           Proceed to Checkout
         </button>
