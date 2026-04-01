@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import products from '../../public/products.json'
+import products from '../assets/data/products.json'
 import ProductCard from "./ProductCard";
 import { toast } from "react-toastify";
 import Cart from "./Cart";
