@@ -38,7 +38,7 @@ const Header = ({ cartCount }) => {
         <div className="flex items-center gap-5 md:gap-2">
           <div className="relative">
             <ShoppingCart />
-            <span className="absolute -top-3 -right-2 text-sm h-5 w-5 rounded-full text-center text-white bg-linear-to-l from-[#9514FA] to-[#4F39F6] select-none">
+            <span className="absolute -top-3 -right-2 text-sm h-5 w-5 rounded-full text-center text-white bg-linear-to-l from-[#9514FA] to-[#4F39F6] select-none" style={!cartCount ? {display: 'none'} : {display: 'inline-block'}}>
               {cartCount}
             </span>
           </div>
