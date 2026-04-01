@@ -1,9 +1,8 @@
 import { Menu, ShoppingCart } from 'lucide-react';
 import React, { useState } from 'react';
 
-const Header = () => {
-
-    const [menuOpen, setMenuOpen] = useState(false);
+const Header = ({ cartCount }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="bg-white sticky top-0 z-50">
@@ -40,7 +39,7 @@ const Header = () => {
           <div className="relative">
             <ShoppingCart />
             <span className="absolute -top-3 -right-2 text-sm h-5 w-5 rounded-full text-center text-white bg-linear-to-l from-[#9514FA] to-[#4F39F6] select-none">
-              0
+              {cartCount}
             </span>
           </div>
 
@@ -105,6 +104,6 @@ const Header = () => {
       )}
     </header>
   );
-}
+};
 
 export default Header

@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import products from '../../public/products.json'
 import ProductCard from "./ProductCard";
 
-const MainSection = () => {
+const MainSection = ({ cartItems, setCartItems }) => {
   return (
+
+    const [activeTab, setActiveTab] = useState('products');
+
+    const handleAddToCart = (product) => {
+        const alreadyInCart = cartItems.find((item) => item.id === product.id);
+        if(already)
+    }
+
     <section className="py-6 mt-20 px-6 lg:px-20">
       {/* Main section content  */}
       <div className="text-center space-y-4">
